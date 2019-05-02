@@ -26,7 +26,7 @@ const introduction = text => {
 	localStorage.setItem('episode', text);
 	$('.reading-animation').html(text);
 }
-
+//audio
 var audio = new Audio("musica.ogg");
 
 audio.onended = function() {
@@ -38,6 +38,7 @@ function playAudio() {
     audio.play();
 }
 
+//pega e preenche no html 
 $.ajax({
 	url: 'https://swapi.co/api/films',
 	method: 'get',
@@ -58,7 +59,7 @@ $.ajax({
 	}
 });
 
-
+// quando o filme for clicado , exibe introducao
 $("#movies ul").on('click', 'li', function(e){
 	let url = $(e.target).data('episode-url');
 
